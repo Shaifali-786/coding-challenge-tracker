@@ -21,23 +21,24 @@ const ChallengeDetail = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   useEffect(() => {
-  fetchChallenge();
-}, []);
-  const fetchChallenge = async () => {
-    try {
-      const response = await getChallenge(id);
-      if (response.success) {
-        setChallenge(response.data);
+    const fetchChallenge = async () => {
+      try {
+        const response = await getChallenge(id);
+        if (response.success) {
+          setChallenge(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching challenge:", error);
+        if (error.response?.status === 404 || error.response?.status === 401) {
+          navigate("/dashboard");
+        }
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Error fetching challenge:", error);
-      if (error.response?.status === 404 || error.response?.status === 401) {
-        navigate("/dashboard");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
+
+    fetchChallenge();
+  }, [id, navigate]);
 
   const handleToggleDay = async (dayNumber) => {
     try {
