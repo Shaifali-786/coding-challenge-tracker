@@ -21,8 +21,8 @@ const ChallengeDetail = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   useEffect(() => {
-    fetchChallenge();
-  }, [fetchChallenge]);
+  fetchChallenge();
+}, []);
   const fetchChallenge = async () => {
     try {
       const response = await getChallenge(id);

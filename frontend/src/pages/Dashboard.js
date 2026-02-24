@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ChallengeCard from '../components/ChallengeCard';
 import { getChallenges, createChallenge } from '../services/challengeService';
