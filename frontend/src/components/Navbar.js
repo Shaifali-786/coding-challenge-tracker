@@ -1,8 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
-import profileImg1 from './shaif 3.jpg';
-import profileImg2 from './shaif 222.jpg';
 import profileImg3 from './shaif_passport_image.jpeg';
 
 

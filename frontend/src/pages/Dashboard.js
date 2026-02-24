@@ -19,7 +19,6 @@ const Dashboard = () => {
     startDate: new Date().toISOString().split('T')[0]
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   // Fetch challenges on component mount
   useEffect(() => {
