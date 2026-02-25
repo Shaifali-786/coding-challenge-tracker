@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors({
   origin: [
     "http://localhost:3000",
+    "https://coding-challenge-tracker.vercel.app",
     "https://coding-challenge-tracker-ka8h.vercel.app"
   ],
   credentials: true
